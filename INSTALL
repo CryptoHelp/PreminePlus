@@ -1,0 +1,9 @@
+Building PreminePlus
+
+See doc/readme-qt.rst for instructions on building PreminePlus QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of PreminePlus.
+
+See doc/build-*.txt for instructions on building PreminePlusd,
+the intended-for-services, no-graphical-interface, reference
+implementation of PreminePlus.
