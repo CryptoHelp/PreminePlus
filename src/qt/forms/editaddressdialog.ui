@@ -6,57 +6,92 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>457</width>
+    <width>505</width>
     <height>126</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Edit Address</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:url(:/images/aboutpage);color:white;font-family:impact;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QFormLayout" name="formLayout">
-     <property name="fieldGrowthPolicy">
-      <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+    <widget class="QFrame" name="QFrame1">
+     <property name="styleSheet">
+      <string notr="true">background:rgba(255,255,255,50);border:1px solid white;</string>
      </property>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>&amp;Label</string>
-       </property>
-       <property name="buddy">
-        <cstring>labelEdit</cstring>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="labelEdit">
-       <property name="toolTip">
-        <string>The label associated with this address book entry</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>&amp;Address</string>
-       </property>
-       <property name="buddy">
-        <cstring>addressEdit</cstring>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="addressEdit">
-       <property name="toolTip">
-        <string>The address associated with this address book entry. This can only be modified for sending addresses.</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+     <layout class="QFormLayout" name="formLayout">
+      <property name="fieldGrowthPolicy">
+       <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>impact</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: none;margin-left:5px;border:none;</string>
+        </property>
+        <property name="text">
+         <string>&amp;Label</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="labelEdit">
+        <property name="toolTip">
+         <string>The label associated with this address book entry</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: rgba(0,0,0,100);margin-right:8px</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>impact</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: none;margin-left:5px;border:none;</string>
+        </property>
+        <property name="text">
+         <string>&amp;Address</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="addressEdit">
+        <property name="toolTip">
+         <string>The address associated with this address book entry. This can only be modified for sending addresses.</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: rgba(0,0,0,100);margin-right:8px</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="styleSheet">
+      <string notr="true">background: #2a82db; color: white; border-radius: 5px; padding:4px 28px;border:1px solid white;</string>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -67,7 +102,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../bitcoin.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

@@ -6,12 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>500</height>
+    <width>800</width>
+    <height>440</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Coin Control</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: url(:/images/ccontrol);font-family:impact;color:white</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -39,7 +48,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="labelCoinControlQuantityText">
          <property name="styleSheet">
-          <string notr="true">font-weight:bold;</string>
+          <string notr="true">font-weight:bold;background:none;</string>
          </property>
          <property name="text">
           <string>Quantity:</string>
@@ -50,8 +59,7 @@
         <widget class="QLabel" name="labelCoinControlQuantity">
          <property name="font">
           <font>
-           <family>Monospace</family>
-           <pointsize>10</pointsize>
+           <family>impact</family>
           </font>
          </property>
          <property name="cursor">
@@ -59,6 +67,9 @@
          </property>
          <property name="contextMenuPolicy">
           <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>0</string>
@@ -71,7 +82,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="labelCoinControlBytesText">
          <property name="styleSheet">
-          <string notr="true">font-weight:bold;</string>
+          <string notr="true">font-weight:bold;background:none;</string>
          </property>
          <property name="text">
           <string>Bytes:</string>
@@ -82,8 +93,7 @@
         <widget class="QLabel" name="labelCoinControlBytes">
          <property name="font">
           <font>
-           <family>Monospace</family>
-           <pointsize>10</pointsize>
+           <family>impact</family>
           </font>
          </property>
          <property name="cursor">
@@ -91,6 +101,9 @@
          </property>
          <property name="contextMenuPolicy">
           <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>0</string>
@@ -119,7 +132,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="labelCoinControlAmountText">
          <property name="styleSheet">
-          <string notr="true">font-weight:bold;</string>
+          <string notr="true">font-weight:bold;background:none;</string>
          </property>
          <property name="text">
           <string>Amount:</string>
@@ -130,8 +143,7 @@
         <widget class="QLabel" name="labelCoinControlAmount">
          <property name="font">
           <font>
-           <family>Monospace</family>
-           <pointsize>10</pointsize>
+           <family>impact</family>
           </font>
          </property>
          <property name="cursor">
@@ -139,6 +151,9 @@
          </property>
          <property name="contextMenuPolicy">
           <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>0.00 MINT</string>
@@ -151,7 +166,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="labelCoinControlPriorityText">
          <property name="styleSheet">
-          <string notr="true">font-weight:bold;</string>
+          <string notr="true">font-weight:bold;background:none;</string>
          </property>
          <property name="text">
           <string>Priority:</string>
@@ -162,8 +177,7 @@
         <widget class="QLabel" name="labelCoinControlPriority">
          <property name="font">
           <font>
-           <family>Monospace</family>
-           <pointsize>10</pointsize>
+           <family>impact</family>
           </font>
          </property>
          <property name="cursor">
@@ -171,6 +185,9 @@
          </property>
          <property name="contextMenuPolicy">
           <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string/>
@@ -199,7 +216,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="labelCoinControlFeeText">
          <property name="styleSheet">
-          <string notr="true">font-weight:bold;</string>
+          <string notr="true">font-weight:bold;background:none;</string>
          </property>
          <property name="text">
           <string>Fee:</string>
@@ -210,8 +227,7 @@
         <widget class="QLabel" name="labelCoinControlFee">
          <property name="font">
           <font>
-           <family>Monospace</family>
-           <pointsize>10</pointsize>
+           <family>impact</family>
           </font>
          </property>
          <property name="cursor">
@@ -219,6 +235,9 @@
          </property>
          <property name="contextMenuPolicy">
           <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>0.00 MINT</string>
@@ -234,7 +253,7 @@
           <bool>false</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">font-weight:bold;</string>
+          <string notr="true">font-weight:bold;background:none;</string>
          </property>
          <property name="text">
           <string>Low Output:</string>
@@ -248,8 +267,7 @@
          </property>
          <property name="font">
           <font>
-           <family>Monospace</family>
-           <pointsize>10</pointsize>
+           <family>impact</family>
           </font>
          </property>
          <property name="cursor">
@@ -257,6 +275,9 @@
          </property>
          <property name="contextMenuPolicy">
           <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>no</string>
@@ -285,7 +306,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="labelCoinControlAfterFeeText">
          <property name="styleSheet">
-          <string notr="true">font-weight:bold;</string>
+          <string notr="true">font-weight:bold;background:none;</string>
          </property>
          <property name="text">
           <string>After Fee:</string>
@@ -296,8 +317,7 @@
         <widget class="QLabel" name="labelCoinControlAfterFee">
          <property name="font">
           <font>
-           <family>Monospace</family>
-           <pointsize>10</pointsize>
+           <family>impact</family>
           </font>
          </property>
          <property name="cursor">
@@ -305,6 +325,9 @@
          </property>
          <property name="contextMenuPolicy">
           <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>0.00 MINT</string>
@@ -320,7 +343,7 @@
           <bool>false</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">font-weight:bold;</string>
+          <string notr="true">font-weight:bold;background:none;</string>
          </property>
          <property name="text">
           <string>Change:</string>
@@ -334,8 +357,7 @@
          </property>
          <property name="font">
           <font>
-           <family>Monospace</family>
-           <pointsize>10</pointsize>
+           <family>impact</family>
           </font>
          </property>
          <property name="cursor">
@@ -343,6 +365,9 @@
          </property>
          <property name="contextMenuPolicy">
           <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>0.00 MINT</string>
@@ -364,6 +389,15 @@
        <height>40</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <family>impact</family>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: rgba(255,255,255,50);color:white;font-family:impact;font-size:14px;</string>
+     </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
@@ -379,7 +413,7 @@
         <height>41</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayoutPanel" stretch="0,0,0,0,0">
+      <layout class="QHBoxLayout" name="horizontalLayoutPanel" stretch="0,0,0,0">
        <property name="spacing">
         <number>14</number>
        </property>
@@ -390,6 +424,9 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: #2a82db; color: white; border-radius: 5px; padding:4px 10px;border:1px solid white;</string>
          </property>
          <property name="text">
           <string>(un)select all</string>
@@ -403,6 +440,9 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>Tree mode</string>
@@ -419,6 +459,9 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>List mode</string>
@@ -447,6 +490,24 @@
      <property name="contextMenuPolicy">
       <enum>Qt::CustomContextMenu</enum>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgba(0,0,0,100);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>false</bool>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
      <property name="sortingEnabled">
       <bool>false</bool>
      </property>
@@ -463,25 +524,102 @@
       <property name="text">
        <string/>
       </property>
+      <property name="font">
+       <font>
+        <family>Impact</family>
+       </font>
+      </property>
+      <property name="background">
+       <color alpha="50">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </property>
      </column>
      <column>
       <property name="text">
        <string>Amount</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Impact</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="background">
+       <color alpha="50">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
       </property>
      </column>
      <column>
       <property name="text">
        <string>Label</string>
       </property>
+      <property name="font">
+       <font>
+        <family>Impact</family>
+       </font>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </property>
      </column>
      <column>
       <property name="text">
        <string>Address</string>
       </property>
+      <property name="font">
+       <font>
+        <family>Impact</family>
+       </font>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </property>
      </column>
      <column>
       <property name="text">
        <string>Date</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Impact</family>
+       </font>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
       </property>
      </column>
      <column>
@@ -491,10 +629,38 @@
       <property name="toolTip">
        <string>Confirmed</string>
       </property>
+      <property name="font">
+       <font>
+        <family>Impact</family>
+       </font>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </property>
      </column>
      <column>
       <property name="text">
        <string>Priority</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Impact</family>
+       </font>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
       </property>
      </column>
      <column>
@@ -527,6 +693,14 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="font">
+      <font>
+       <family>impact</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: #2a82db; color: white; border-radius: 5px; padding:4px 28px;border:1px solid white;</string>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -544,6 +718,8 @@
    <header>coincontroltreewidget.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../bitcoin.qrc"/>
+ </resources>
  <connections/>
 </ui>

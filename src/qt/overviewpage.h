@@ -45,6 +45,10 @@ private:
     TxViewDelegate *txdelegate;
     TransactionFilterProxy *filter;
 
+//ADDED
+    QAction *unlockAction;
+    QAction *lockAction;
+
 private slots:
     void updateDisplayUnit();
     void handleTransactionClicked(const QModelIndex &index);

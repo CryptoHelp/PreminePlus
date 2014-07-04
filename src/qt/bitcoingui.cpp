@@ -68,11 +68,14 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     notificator(0),
     rpcConsole(0)
 {
-    
-        setStyleSheet("font: 9pt Lucida Grande;");
-    
-    resize(850, 550);
+//      setStyleSheet("font: 9pt Lucida Grande;");
+        setStyleSheet("BitcoinGUI { background: url(:/images/bg);font: 9pt Impact;color:white;}");
+        qApp->setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white;padding: 6px; }");
+
+//    resize(850, 550);
+    setFixedSize(900, 480);
     setWindowTitle(tr("PreminePlus") + " - " + tr("Wallet"));
+
 #ifndef Q_OS_MAC
     qApp->setWindowIcon(QIcon(":icons/bitcoin"));
     setWindowIcon(QIcon(":icons/bitcoin"));
@@ -226,6 +229,20 @@ void BitcoinGUI::createActions()
     addressBookAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
     tabGroup->addAction(addressBookAction);
 
+// ADDED UNLOCK TO MENU
+    unlockAction = new QAction(QIcon(":/icons/lock_open"), tr("&Unlock Wallet"), this);
+    unlockAction->setToolTip(tr("Unlock Wallet for staking"));
+    unlockAction->setCheckable(true);
+    unlockAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
+    tabGroup->addAction(unlockAction);
+// ADDED LOCK TO MENU
+    lockAction = new QAction(QIcon(":/icons/lock_closed"), tr("&Lock Wallet"), this);
+    lockAction->setToolTip(tr("Lock Wallet"));
+    lockAction->setCheckable(true);
+    lockAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
+    tabGroup->addAction(lockAction);
+
+
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(gotoOverviewPage()));
     connect(sendCoinsAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
@@ -236,6 +253,8 @@ void BitcoinGUI::createActions()
     connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(gotoAddressBookPage()));
+    connect(unlockAction, SIGNAL(triggered()), this, SLOT(unlockWallet()));
+    connect(lockAction, SIGNAL(triggered()), this, SLOT(lockWallet()));
 
     quitAction = new QAction(QIcon(":/icons/quit"), tr("E&xit"), this);
     quitAction->setToolTip(tr("Quit application"));
@@ -322,10 +341,18 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(receiveCoinsAction);
     toolbar->addAction(historyAction);
     toolbar->addAction(addressBookAction);
+    toolbar->addAction(unlockAction);
+    toolbar->addAction(lockAction);
+    toolbar->setMovable( false );
+    toolbar->setOrientation(Qt::Vertical);
+    toolbar->setAllowedAreas(Qt::LeftToolBarArea);
+    toolbar->setMinimumWidth(140);
+    addToolBar(Qt::LeftToolBarArea, toolbar);
+    toolbar->setStyleSheet("Qtoolbar {margin-top:20px;} QWidget {width:120px;color:white;float:left;}");
 
-    QToolBar *toolbar2 = addToolBar(tr("Actions toolbar"));
-    toolbar2->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    toolbar2->addAction(exportAction);
+//    QToolBar *toolbar2 = addToolBar(tr("Actions toolbar"));
+//    toolbar2->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+//    toolbar2->addAction(exportAction);
 }
 
 void BitcoinGUI::setClientModel(ClientModel *clientModel)

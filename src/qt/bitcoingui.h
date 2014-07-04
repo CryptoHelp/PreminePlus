@@ -78,6 +78,8 @@ private:
     QAction *quitAction;
     QAction *sendCoinsAction;
     QAction *addressBookAction;
+    QAction *unlockAction;
+    QAction *lockAction;
     QAction *signMessageAction;
     QAction *verifyMessageAction;
     QAction *aboutAction;

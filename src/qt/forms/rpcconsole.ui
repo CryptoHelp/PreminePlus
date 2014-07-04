@@ -7,19 +7,46 @@
     <x>0</x>
     <y>0</y>
     <width>740</width>
-    <height>450</height>
+    <height>440</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>740</width>
+    <height>440</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>740</width>
+    <height>440</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>PreminePlus - Debug window</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:url(:/images/ccontrol);font-family:impact;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
      <widget class="QWidget" name="tab_info">
+      <property name="styleSheet">
+       <string notr="true">background:rgba(255,255,255,50);color:white;</string>
+      </property>
       <attribute name="title">
        <string>&amp;Information</string>
       </attribute>
@@ -31,9 +58,11 @@
         <widget class="QLabel" name="label_9">
          <property name="font">
           <font>
-           <weight>75</weight>
-           <bold>true</bold>
+           <family>impact</family>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>PreminePlus Core</string>
@@ -42,6 +71,9 @@
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_5">
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
+         </property>
          <property name="text">
           <string>Client name</string>
          </property>
@@ -51,6 +83,9 @@
         <widget class="QLabel" name="clientName">
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>N/A</string>
@@ -65,6 +100,9 @@
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="label_6">
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
+         </property>
          <property name="text">
           <string>Client version</string>
          </property>
@@ -74,6 +112,9 @@
         <widget class="QLabel" name="clientVersion">
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>N/A</string>
@@ -88,6 +129,9 @@
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="label_14">
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
+         </property>
          <property name="text">
           <string>Using OpenSSL version</string>
          </property>
@@ -100,6 +144,9 @@
         <widget class="QLabel" name="openSSLVersion">
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>N/A</string>
@@ -114,6 +161,9 @@
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="label_12">
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
+         </property>
          <property name="text">
           <string>Build date</string>
          </property>
@@ -123,6 +173,9 @@
         <widget class="QLabel" name="buildDate">
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>N/A</string>
@@ -137,6 +190,9 @@
        </item>
        <item row="5" column="0">
         <widget class="QLabel" name="label_13">
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
+         </property>
          <property name="text">
           <string>Startup time</string>
          </property>
@@ -146,6 +202,9 @@
         <widget class="QLabel" name="startupTime">
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>N/A</string>
@@ -162,9 +221,11 @@
         <widget class="QLabel" name="label_11">
          <property name="font">
           <font>
-           <weight>75</weight>
-           <bold>true</bold>
+           <family>impact</family>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>Network</string>
@@ -173,6 +234,9 @@
        </item>
        <item row="7" column="0">
         <widget class="QLabel" name="label_7">
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
+         </property>
          <property name="text">
           <string>Number of connections</string>
          </property>
@@ -182,6 +246,9 @@
         <widget class="QLabel" name="numberOfConnections">
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>N/A</string>
@@ -196,6 +263,9 @@
        </item>
        <item row="8" column="0">
         <widget class="QLabel" name="label_8">
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
+         </property>
          <property name="text">
           <string>On testnet</string>
          </property>
@@ -206,6 +276,9 @@
          <property name="enabled">
           <bool>false</bool>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -215,9 +288,11 @@
         <widget class="QLabel" name="label_10">
          <property name="font">
           <font>
-           <weight>75</weight>
-           <bold>true</bold>
+           <family>impact</family>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>Block chain</string>
@@ -226,6 +301,9 @@
        </item>
        <item row="10" column="0">
         <widget class="QLabel" name="label_3">
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
+         </property>
          <property name="text">
           <string>Current number of blocks</string>
          </property>
@@ -235,6 +313,9 @@
         <widget class="QLabel" name="numberOfBlocks">
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>N/A</string>
@@ -249,6 +330,9 @@
        </item>
        <item row="11" column="0">
         <widget class="QLabel" name="label_4">
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
+         </property>
          <property name="text">
           <string>Estimated total blocks</string>
          </property>
@@ -258,6 +342,9 @@
         <widget class="QLabel" name="totalBlocks">
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>N/A</string>
@@ -272,6 +359,9 @@
        </item>
        <item row="12" column="0">
         <widget class="QLabel" name="label_2">
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
+         </property>
          <property name="text">
           <string>Last block time</string>
          </property>
@@ -281,6 +371,9 @@
         <widget class="QLabel" name="lastBlockTime">
          <property name="cursor">
           <cursorShape>IBeamCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>N/A</string>
@@ -310,9 +403,11 @@
         <widget class="QLabel" name="labelDebugLogfile">
          <property name="font">
           <font>
-           <weight>75</weight>
-           <bold>true</bold>
+           <family>impact</family>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>Debug log file</string>
@@ -321,8 +416,17 @@
        </item>
        <item row="15" column="0">
         <widget class="QPushButton" name="openDebugLogfileButton">
+         <property name="font">
+          <font>
+           <family>impact</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Open the PreminePlus debug log file from the current data directory. This can take a few seconds for large log files.</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: #2a82db; color: white; border-radius: 5px; padding:4px 28px;border:1px solid white;</string>
          </property>
          <property name="text">
           <string>&amp;Open</string>
@@ -336,9 +440,11 @@
         <widget class="QLabel" name="labelCLOptions">
          <property name="font">
           <font>
-           <weight>75</weight>
-           <bold>true</bold>
+           <family>impact</family>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:none;</string>
          </property>
          <property name="text">
           <string>Command-line options</string>
@@ -349,6 +455,9 @@
         <widget class="QPushButton" name="showCLOptionsButton">
          <property name="toolTip">
           <string>Show the PreminePlus-Qt help message to get a list with possible PreminePlus command-line options.</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: #2a82db; color: white; border-radius: 5px; padding:4px 28px;border:1px solid white;</string>
          </property>
          <property name="text">
           <string>&amp;Show</string>
@@ -374,6 +483,9 @@
       </layout>
      </widget>
      <widget class="QWidget" name="tab_console">
+      <property name="styleSheet">
+       <string notr="true">background:rgba(255,255,255,50);color:white;</string>
+      </property>
       <attribute name="title">
        <string>&amp;Console</string>
       </attribute>
@@ -388,6 +500,9 @@
            <width>0</width>
            <height>100</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:rgba(0,0,0,100)</string>
          </property>
          <property name="readOnly">
           <bool>true</bool>
@@ -407,13 +522,20 @@
          </property>
          <item>
           <widget class="QLabel" name="label">
+           <property name="styleSheet">
+            <string notr="true">background:none;</string>
+           </property>
            <property name="text">
             <string notr="true">&gt;</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit"/>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="styleSheet">
+            <string notr="true">background:rgba(0,0,0,100)</string>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QPushButton" name="clearButton">
@@ -425,6 +547,9 @@
            </property>
            <property name="toolTip">
             <string>Clear console</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background: #2a82db; color: white; border-radius: 5px; padding:4px;border:1px solid white;</string>
            </property>
            <property name="text">
             <string/>

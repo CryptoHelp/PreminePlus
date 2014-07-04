@@ -14,7 +14,7 @@
 #include <QPainter>
 
 #define DECORATION_SIZE 64
-#define NUM_ITEMS 6
+#define NUM_ITEMS 5
 
 class TxViewDelegate : public QAbstractItemDelegate
 {
@@ -153,6 +153,7 @@ void OverviewPage::setNumTransactions(int count)
     ui->labelNumTransactions->setText(QLocale::system().toString(count));
 }
 
+// ADDED IF WALLET LOCKED HIDE/UNHIDE LOCK BUTTONS
 void OverviewPage::unlockWallet()
 {
     if(model->getEncryptionStatus() == WalletModel::Locked)
@@ -161,13 +162,17 @@ void OverviewPage::unlockWallet()
         dlg.setModel(model);
         if(dlg.exec() == QDialog::Accepted)
         {
-            ui->unlockWalletButton->setText(QString("Lock Wallet"));
+//            ui->unlockWalletButton->setText(QString("Lock Wallet"));
+            unlockAction->setVisible(0);
+            lockAction->setVisible(1);
         }
     }
     else
     {
         model->setWalletLocked(true);
-        ui->unlockWalletButton->setText(QString("Unlock Wallet"));
+//        ui->unlockWalletButton->setText(QString("Unlock Wallet"));
+        unlockAction->setVisible(0);
+        lockAction->setVisible(1);
     }
 }
 
@@ -197,12 +202,12 @@ void OverviewPage::setModel(WalletModel *model)
         connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
 
         // Unlock wallet button
-        WalletModel::EncryptionStatus status = model->getEncryptionStatus();
-        if(status == WalletModel::Unencrypted)
-        {
-            ui->unlockWalletButton->setDisabled(true);
-        }
-        connect(ui->unlockWalletButton, SIGNAL(clicked()), this, SLOT(unlockWallet()));
+//        WalletModel::EncryptionStatus status = model->getEncryptionStatus();
+//        if(status == WalletModel::Unencrypted)
+//        {
+//            ui->unlockWalletButton->setDisabled(true);
+//        }
+//        connect(ui->unlockWalletButton, SIGNAL(clicked()), this, SLOT(unlockWallet()));
      }
 
     // update the display unit, to not use the default ("ECC")

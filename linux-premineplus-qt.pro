@@ -3,7 +3,7 @@ TARGET = PreminePlus-qt
 VERSION = 0.7.3
 INCLUDEPATH += src src/json src/qt
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE BOOST_THREAD_PROVIDES_GENERIC_SHARED_MUTEX_ON_WIN __NO_SYSTEM_INCLUDES
-CONFIG += no_include_pwd static
+CONFIG += no_include_pwd
 
 # UNCOMMENT THIS SECTION TO BUILD ON WINDOWS
 # Change paths if needed, these use the foocoin/deps.git repository locations
@@ -12,8 +12,14 @@ windows:LIBS += -lshlwapi
 LIBS += $$join(BOOST_LIB_PATH,,-L,) $$join(BDB_LIB_PATH,,-L,) $$join(OPENSSL_LIB_PATH,,-L,) $$join(QRENCODE_LIB_PATH,,-L,)
 LIBS += -lssl -lcrypto -ldb_cxx$$BDB_LIB_SUFFIX
 windows:LIBS += -lws2_32 -lole32 -loleaut32 -luuid -lgdi32
-LIBS += -lboost_system-mgw46-mt-sd-1_53 -lboost_filesystem-mgw46-mt-sd-1_53 -lboost_program_options-mgw46-mt-sd-1_53 -lboost_thread-mgw46-mt-sd-1_53
-BOOST_LIB_SUFFIX=-mgw46-mt-sd-1_53
+win32 {
+ LIBS += -lboost_system-mgw46-mt-sd-1_53 -lboost_filesystem-mgw46-mt-sd-1_53 -lboost_program_options-mgw46-mt-sd-1_53 -lboost_thread-mgw46-mt-sd-1_53
+ BOOST_LIB_SUFFIX=-mgw46-mt-sd-1_53
+ }
+unix {
+  LIBS += -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread
+  BOOST_LIB_SUFFIX=
+  }
 BOOST_INCLUDE_PATH=D:/deps/boost
 BOOST_LIB_PATH=D:/deps/boost/stage/lib
 BDB_INCLUDE_PATH=d:/deps/db/build_unix
@@ -318,7 +324,7 @@ OTHER_FILES += \
     doc/*.rst doc/*.txt doc/README README.md res/bitcoin-qt.rc src/test/*.cpp src/test/*.h src/qt/test/*.cpp src/qt/test/*.h
 
 # platform specific defaults, if not overridden on command line
-isEmpty(BOOST_LIB_SUFFIX) {
+!unix: isEmpty(BOOST_LIB_SUFFIX) {
     macx:BOOST_LIB_SUFFIX = -mt
     windows:BOOST_LIB_SUFFIX = -mgw44-mt-s-1_50
 }

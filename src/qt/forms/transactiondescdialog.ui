@@ -10,14 +10,26 @@
     <height>250</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>Transaction details</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:url(:/images/addressbook);font-family:impact;color:white;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTextEdit" name="detailText">
      <property name="toolTip">
       <string>This pane shows a detailed description of the transaction</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:rgba(255,255,255,50)</string>
      </property>
      <property name="readOnly">
       <bool>true</bool>
@@ -26,6 +38,9 @@
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="styleSheet">
+      <string notr="true">background: #2a82db; color: white; border-radius: 5px;padding:4px 28px;border:1px solid white;</string>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -36,7 +51,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../bitcoin.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

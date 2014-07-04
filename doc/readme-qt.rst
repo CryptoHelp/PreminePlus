@@ -28,6 +28,77 @@ Alternatively, install Qt Creator and open the `bitcoin-qt.pro` file.
 An executable named `bitcoin-qt` will be built.
 
 
+
+
+Ubuntu
+-------
+
+1. Install git, make a ~/src directory and clone the memecoin-qt source code
+apt-get install git
+cd ~
+mkdir src
+cd src
+git clone https://github.com/muddafudda/Memecoin	
+sudo apt-get install git
+cd ~
+mkdir src
+cd src
+git clone https://github.com/muddafudda/Memecoin
+
+2. Download the needed development files
+sudo apt-get install build-essential libssl-dev \
+libdb-dev libdb++-dev libboost-all-dev \
+libqrencode-dev qt4-qmake libqtgui4 libqt4-dev	
+sudo apt-get install build-essential libssl-dev \
+libdb-dev libdb++-dev libboost-all-dev \
+libqrencode-dev qt4-qmake libqtgui4 libqt4-dev
+
+3. Fix memecoin-qt.pro
+
+There is a little error in the memecoin-qt.pro file which forces make to use a very specific version of boost. Open ~/src/Memecoin/memecoin-qt.pro and change the line that says
+LIBS += -lboost_system-mgw46-mt-sd-1_53 -lboost_filesystem-mgw46-mt-sd-1_53 -lboost_program_options-mgw46-mt-sd-1_53 -lboost_thread-mgw46-mt-sd-1_53
+into
+LIBS += -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread
+
+BOOST_LIB_SUFFIX=-mgw46-mt-sd-1_53
+should become
+BOOST_LIB_SUFFIX=
+
+and deleting the following lines
+
+isEmpty(BOOST_LIB_SUFFIX) {
+macx:BOOST_LIB_SUFFIX = -mt
+windows:BOOST_LIB_SUFFIX = -mgw44-mt-s-1_53
+}
+
+should help you fix errors like:
+
+ddatamapper.o build/moc_transactiondesc.o build/moc_transactiondescdialog.o build/moc_bitcoinamountfield.o build/moc_transactionfilterproxy.o build/moc_transactionview.o build/moc_walletmodel.o build/moc_overviewpage.o build/moc_csvmodelwriter.o build/moc_sendcoinsentry.o build/moc_qvalidatedlineedit.o build/moc_qvaluecombobox.o build/moc_askpassphrasedialog.o build/moc_notificator.o build/moc_miningpage.o build/moc_rpcconsole.o build/qrc_bitcoin.o    -L/usr/lib/i386-linux-gnu -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lrt -LC:/deps/boost/stage/lib -Lc:/deps/db/build_unix -Lc:/deps/ssl -lssl -lcrypto -ldb_cxx -lboost_system-mgw46-mt-sd-1_53 -lboost_filesystem-mgw46-mt-sd-1_53 -lboost_program_options-mgw46-mt-sd-1_53 -lboost_thread-mgw46-mt-sd-1_53 -lQtGui -lQtCore -lpthread
+/usr/bin/ld: cannot find -lboost_system-mgw46-mt-sd-1_53
+/usr/bin/ld: cannot find -lboost_filesystem-mgw46-mt-sd-1_53
+/usr/bin/ld: cannot find -lboost_program_options-mgw46-mt-sd-1_53
+/usr/bin/ld: cannot find -lboost_thread-mgw46-mt-sd-1_53
+collect2: error: ld returned 1 exit status
+make: *** [memecoin-qt] Error 1
+
+4. Prepare the installation
+
+cd ~/src/MemeCoin
+qmake USE_UPNP=- USE_QRCODE=0 USE_IPV6=0
+
+You can safely ignore following messages:
+Project MESSAGE: Building without UPNP support
+Project MESSAGE: Building with UPNP supportRemoved plural forms as the target language has less forms.
+If this sounds wrong, possibly the target language is not set or recognized.
+
+5. Build it
+
+make
+
+The last step might take a while, but once it’s finished, there should be an executable file called ‘memecoin-qt’ in ~/src/Memecoin/
+
+
+
 Windows
 --------
 
