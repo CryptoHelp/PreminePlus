@@ -4,7 +4,6 @@ PreminePlus-qt: Qt4 GUI for PreminePlus
 Build instructions
 ===================
 
-----------------
 DEBIAN - UBUNTU
 ----------------
 
@@ -31,7 +30,6 @@ An executable named `linux-premineplus-qt` will be built.
 
 
 
---------
 WINDOWS
 --------
 
@@ -53,7 +51,6 @@ Windows build instructions:
 
 
 
-----------
 MAC OS X
 ----------
 
@@ -78,7 +75,6 @@ MAC OS X
 
 
 
-============================
 Build configuration options
 ============================
 
@@ -132,7 +128,7 @@ flag to qmake to control this:
 
 
 Berkely DB version warning
-==========================
+--------------------------
 
 The nasty thing is that databases from 5.X are not compatible with 4.X.
 
