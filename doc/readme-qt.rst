@@ -1,11 +1,11 @@
-Bitcoin-qt: Qt4 GUI for Bitcoin
+PreminePlus-qt: Qt4 GUI for PreminePlus
 ===============================
 
 Build instructions
 ===================
 
-Debian
--------
+DEBIAN - UBUNTU
+----------------
 
 First, make sure that the required packages for Qt4 development of your
 distribution are installed, for Debian and Ubuntu these are:
@@ -14,92 +14,23 @@ distribution are installed, for Debian and Ubuntu these are:
 
     apt-get install qt4-qmake libqt4-dev build-essential libboost-dev libboost-system-dev \
         libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev \
-        libssl-dev libdb4.8++-dev
+        libssl-dev libdb-dev
 
 then execute the following:
 
 ::
 
-    qmake
+    qmake-qt4 -makefile linux-premineplus-qt.pro
     make
 
-Alternatively, install Qt Creator and open the `bitcoin-qt.pro` file.
+Alternatively, install Qt Creator and open the `linux-premineplus-qt.pro` file.
 
-An executable named `bitcoin-qt` will be built.
-
-
-
-
-Ubuntu
--------
-
-1. Install git, make a ~/src directory and clone the memecoin-qt source code
-apt-get install git
-cd ~
-mkdir src
-cd src
-git clone https://github.com/muddafudda/Memecoin	
-sudo apt-get install git
-cd ~
-mkdir src
-cd src
-git clone https://github.com/muddafudda/Memecoin
-
-2. Download the needed development files
-sudo apt-get install build-essential libssl-dev \
-libdb-dev libdb++-dev libboost-all-dev \
-libqrencode-dev qt4-qmake libqtgui4 libqt4-dev	
-sudo apt-get install build-essential libssl-dev \
-libdb-dev libdb++-dev libboost-all-dev \
-libqrencode-dev qt4-qmake libqtgui4 libqt4-dev
-
-3. Fix memecoin-qt.pro
-
-There is a little error in the memecoin-qt.pro file which forces make to use a very specific version of boost. Open ~/src/Memecoin/memecoin-qt.pro and change the line that says
-LIBS += -lboost_system-mgw46-mt-sd-1_53 -lboost_filesystem-mgw46-mt-sd-1_53 -lboost_program_options-mgw46-mt-sd-1_53 -lboost_thread-mgw46-mt-sd-1_53
-into
-LIBS += -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread
-
-BOOST_LIB_SUFFIX=-mgw46-mt-sd-1_53
-should become
-BOOST_LIB_SUFFIX=
-
-and deleting the following lines
-
-isEmpty(BOOST_LIB_SUFFIX) {
-macx:BOOST_LIB_SUFFIX = -mt
-windows:BOOST_LIB_SUFFIX = -mgw44-mt-s-1_53
-}
-
-should help you fix errors like:
-
-ddatamapper.o build/moc_transactiondesc.o build/moc_transactiondescdialog.o build/moc_bitcoinamountfield.o build/moc_transactionfilterproxy.o build/moc_transactionview.o build/moc_walletmodel.o build/moc_overviewpage.o build/moc_csvmodelwriter.o build/moc_sendcoinsentry.o build/moc_qvalidatedlineedit.o build/moc_qvaluecombobox.o build/moc_askpassphrasedialog.o build/moc_notificator.o build/moc_miningpage.o build/moc_rpcconsole.o build/qrc_bitcoin.o    -L/usr/lib/i386-linux-gnu -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lrt -LC:/deps/boost/stage/lib -Lc:/deps/db/build_unix -Lc:/deps/ssl -lssl -lcrypto -ldb_cxx -lboost_system-mgw46-mt-sd-1_53 -lboost_filesystem-mgw46-mt-sd-1_53 -lboost_program_options-mgw46-mt-sd-1_53 -lboost_thread-mgw46-mt-sd-1_53 -lQtGui -lQtCore -lpthread
-/usr/bin/ld: cannot find -lboost_system-mgw46-mt-sd-1_53
-/usr/bin/ld: cannot find -lboost_filesystem-mgw46-mt-sd-1_53
-/usr/bin/ld: cannot find -lboost_program_options-mgw46-mt-sd-1_53
-/usr/bin/ld: cannot find -lboost_thread-mgw46-mt-sd-1_53
-collect2: error: ld returned 1 exit status
-make: *** [memecoin-qt] Error 1
-
-4. Prepare the installation
-
-cd ~/src/MemeCoin
-qmake USE_UPNP=- USE_QRCODE=0 USE_IPV6=0
-
-You can safely ignore following messages:
-Project MESSAGE: Building without UPNP support
-Project MESSAGE: Building with UPNP supportRemoved plural forms as the target language has less forms.
-If this sounds wrong, possibly the target language is not set or recognized.
-
-5. Build it
-
-make
-
-The last step might take a while, but once it’s finished, there should be an executable file called ‘memecoin-qt’ in ~/src/Memecoin/
+An executable named `linux-premineplus-qt` will be built.
 
 
 
-Windows
+
+WINDOWS
 --------
 
 Windows build instructions:
@@ -118,8 +49,10 @@ Windows build instructions:
 .. _`610945D0`: http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x610945D0
 
 
-Mac OS X
---------
+
+
+MAC OS X
+----------
 
 - Download and install the `Qt Mac OS X SDK`_. It is recommended to also install Apple's Xcode with UNIX tools.
 
@@ -136,6 +69,10 @@ Mac OS X
 
 .. _`Qt Mac OS X SDK`: http://qt.nokia.com/downloads/sdk-mac-os-cpp
 .. _`MacPorts`: http://www.macports.org/install.php
+
+
+
+
 
 
 Build configuration options
@@ -189,14 +126,11 @@ flag to qmake to control this:
 +--------------+--------------------------------------------------------------------------+
 
 
+
 Berkely DB version warning
-==========================
+--------------------------
 
-A warning for people using the *static binary* version of Bitcoin on a Linux/UNIX-ish system (tl;dr: **Berkely DB databases are not forward compatible**).
-
-The static binary version of Bitcoin is linked against libdb4.8 (see also `this Debian issue`_).
-
-Now the nasty thing is that databases from 5.X are not compatible with 4.X.
+The nasty thing is that databases from 5.X are not compatible with 4.X.
 
 If the globally installed development package of Berkely DB installed on your system is 5.X, any source you
 build yourself will be linked against that. The first time you run with a 5.X version the database will be upgraded,
@@ -204,19 +138,3 @@ and 4.X cannot open the new format. This means that you cannot go back to the ol
 significant hassle!
 
 .. _`this Debian issue`: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=621425
-
-Ubuntu 11.10 warning
-====================
-
-Ubuntu 11.10 has a package called 'qt-at-spi' installed by default.  At the time of writing, having that package
-installed causes bitcoin-qt to crash intermittently.  The issue has been reported as `launchpad bug 857790`_, but
-isn't yet fixed.
-
-Until the bug is fixed, you can remove the qt-at-spi package to work around the problem, though this will presumably
-disable screen reader functionality for Qt apps:
-
-::
-
-    sudo apt-get remove qt-at-spi
-
-.. _`launchpad bug 857790`: https://bugs.launchpad.net/ubuntu/+source/qt-at-spi/+bug/857790
