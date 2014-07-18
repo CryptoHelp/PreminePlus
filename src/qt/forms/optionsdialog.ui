@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>540</width>
+    <width>570</width>
     <height>380</height>
    </rect>
   </property>
@@ -28,6 +28,12 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="font">
+      <font>
+       <family>impact</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color:none;</string>
      </property>
@@ -35,9 +41,15 @@
       <enum>QTabWidget::North</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tabMain">
+      <property name="font">
+       <font>
+        <family>impact</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">background:rgba(255,255,255,50);color:white;border:none;</string>
       </property>
@@ -47,11 +59,17 @@
       <layout class="QVBoxLayout" name="verticalLayout_Main">
        <item>
         <widget class="QLabel" name="transactionFeeInfoLabel">
+         <property name="font">
+          <font>
+           <family>impact</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">background:none</string>
          </property>
          <property name="text">
-          <string>Optional transaction fee per kB that helps make sure your transactions are processed quickly. Most transactions are 1 kB. Fee 0.01 recommended.</string>
+          <string>Optional transaction fee per kB that helps make sure your transactions are processed quickly. Most transactions are 1 kB. Fee 0.01 minimum.</string>
          </property>
          <property name="textFormat">
           <enum>Qt::PlainText</enum>
@@ -65,6 +83,12 @@
         <layout class="QHBoxLayout" name="horizontalLayout_Main">
          <item>
           <widget class="QLabel" name="transactionFeeLabel">
+           <property name="font">
+            <font>
+             <family>impact</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">background:none</string>
            </property>
@@ -109,6 +133,12 @@
        </item>
        <item>
         <widget class="QCheckBox" name="bitcoinAtStartup">
+         <property name="font">
+          <font>
+           <family>impact</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Automatically start PreminePlus after logging in to the system.</string>
          </property>
@@ -122,6 +152,12 @@
        </item>
        <item>
         <widget class="QCheckBox" name="detachDatabases">
+         <property name="font">
+          <font>
+           <family>impact</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Detach block and address databases at shutdown. This means they can be moved to another data directory, but it slows down shutdown. The wallet is always detached.</string>
          </property>
@@ -158,6 +194,12 @@
       <layout class="QVBoxLayout" name="verticalLayout_Network">
        <item>
         <widget class="QCheckBox" name="mapPortUpnp">
+         <property name="font">
+          <font>
+           <family>impact</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Automatically open the PreminePlus client port on the router. This only works when your router supports UPnP and it is enabled.</string>
          </property>
@@ -171,6 +213,12 @@
        </item>
        <item>
         <widget class="QCheckBox" name="connectSocks">
+         <property name="font">
+          <font>
+           <family>impact</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Connect to the PreminePlus network through a SOCKS proxy (e.g. when connecting through Tor).</string>
          </property>
@@ -186,6 +234,12 @@
         <layout class="QHBoxLayout" name="horizontalLayout_Network">
          <item>
           <widget class="QLabel" name="proxyIpLabel">
+           <property name="font">
+            <font>
+             <family>impact</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">background:none</string>
            </property>
@@ -218,6 +272,12 @@
          </item>
          <item>
           <widget class="QLabel" name="proxyPortLabel">
+           <property name="font">
+            <font>
+             <family>impact</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">background:none</string>
            </property>
@@ -250,6 +310,12 @@
          </item>
          <item>
           <widget class="QLabel" name="socksVersionLabel">
+           <property name="font">
+            <font>
+             <family>impact</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">background:none</string>
            </property>
@@ -317,6 +383,12 @@
       <layout class="QVBoxLayout" name="verticalLayout_Window">
        <item>
         <widget class="QCheckBox" name="minimizeToTray">
+         <property name="font">
+          <font>
+           <family>impact</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Show only a tray icon after minimizing the window.</string>
          </property>
@@ -330,6 +402,12 @@
        </item>
        <item>
         <widget class="QCheckBox" name="minimizeOnClose">
+         <property name="font">
+          <font>
+           <family>impact</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</string>
          </property>
@@ -368,6 +446,12 @@
         <layout class="QHBoxLayout" name="horizontalLayout_1_Display">
          <item>
           <widget class="QLabel" name="langLabel">
+           <property name="font">
+            <font>
+             <family>impact</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">background:none</string>
            </property>
@@ -398,6 +482,12 @@
         <layout class="QHBoxLayout" name="horizontalLayout_2_Display">
          <item>
           <widget class="QLabel" name="unitLabel">
+           <property name="font">
+            <font>
+             <family>impact</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">background:none</string>
            </property>
@@ -426,6 +516,12 @@
        </item>
        <item>
         <widget class="QCheckBox" name="displayAddresses">
+         <property name="font">
+          <font>
+           <family>impact</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Whether to show PreminePlus addresses in the transaction list or not.</string>
          </property>
@@ -439,6 +535,12 @@
        </item>
        <item>
         <widget class="QCheckBox" name="coinControlFeatures">
+         <property name="font">
+          <font>
+           <family>impact</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="toolTip">
           <string>Whether to show coin control features or not.</string>
          </property>
@@ -518,8 +620,14 @@
      </item>
      <item>
       <widget class="QPushButton" name="okButton">
+       <property name="font">
+        <font>
+         <family>impact</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background: #2a82db; color: white; border-radius: 5px;padding:4px 28px;border:1px solid white;</string>
+        <string notr="true">background: #2a82db; color: white; border-radius: 5px;padding:3px 28px;border:1px solid white;</string>
        </property>
        <property name="text">
         <string>&amp;OK</string>
@@ -528,8 +636,14 @@
      </item>
      <item>
       <widget class="QPushButton" name="cancelButton">
+       <property name="font">
+        <font>
+         <family>impact</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background: #2a82db; color: white; border-radius: 5px;padding:4px 28px;border:1px solid white;</string>
+        <string notr="true">background: #2a82db; color: white; border-radius: 5px;padding:3px 28px;border:1px solid white;</string>
        </property>
        <property name="text">
         <string>&amp;Cancel</string>
@@ -541,8 +655,14 @@
      </item>
      <item>
       <widget class="QPushButton" name="applyButton">
+       <property name="font">
+        <font>
+         <family>impact</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background: #2a82db; color: white; border-radius: 5px;padding:4px 28px;border:1px solid white;</string>
+        <string notr="true">background: #2a82db; color: white; border-radius: 5px;padding:3px 28px;border:1px solid white;</string>
        </property>
        <property name="text">
         <string>&amp;Apply</string>

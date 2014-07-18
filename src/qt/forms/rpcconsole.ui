@@ -32,16 +32,16 @@
    <string>PreminePlus - Debug window</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:url(:/images/ccontrol);font-family:impact;</string>
+   <string notr="true">background:url(:/images/ccontrol) center;font-family:impact;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background:url(:/images/ccontrol) center;</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_info">
       <property name="styleSheet">

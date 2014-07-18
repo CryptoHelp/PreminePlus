@@ -26,7 +26,7 @@
    <string>Send Coins</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:url(:/images/ccontrol) bottom;font-family:impact;color:white;</string>
+   <string notr="true">background: rgba(255,255,255,0);font-family:impact;color:white;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1,0">
    <property name="bottomMargin">

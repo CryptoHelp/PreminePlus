@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>760</width>
+    <width>758</width>
     <height>380</height>
    </rect>
   </property>
@@ -34,7 +34,7 @@
       <string notr="true">background:none;color:white;</string>
      </property>
      <property name="text">
-      <string>These are your PreminePlus addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</string>
+      <string>These are your PreminePlus addresses for receiving payments.</string>
      </property>
      <property name="textFormat">
       <enum>Qt::PlainText</enum>
@@ -52,14 +52,20 @@
      <property name="toolTip">
       <string>Double-click to edit address or label</string>
      </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
      <property name="styleSheet">
-      <string notr="true">background: rgba(255,255,255,100);</string>
+      <string notr="true">background:rgba(0,0,0,100);color:white;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
      </property>
      <property name="tabKeyNavigation">
       <bool>false</bool>
      </property>
      <property name="alternatingRowColors">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="selectionMode">
       <enum>QAbstractItemView::SingleSelection</enum>
@@ -67,9 +73,15 @@
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
      </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
      <property name="sortingEnabled">
       <bool>true</bool>
      </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
      </attribute>
