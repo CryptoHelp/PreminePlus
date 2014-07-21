@@ -118,6 +118,13 @@ CoinControlDialog::CoinControlDialog(QWidget *parent) :
 
     // default view is sorted by amount desc
     sortView(COLUMN_AMOUNT_INT64, Qt::DescendingOrder);
+
+//added
+    ui->treeWidget->setStyleSheet("* { background:rgba(0,0,0,100);background-attachment:fixed;} QTreeWidget::item { background:rgba(0,0,0,0);}");
+    ui->labelCoinControlBytes->setStyleSheet("background:rgba(0,0,0,0);");
+    ui->labelCoinControlPriority->setStyleSheet("background:none;");
+    ui->labelCoinControlLowOutput->setStyleSheet("background:blue");
+    ui->labelCoinControlChange->setStyleSheet("background-color:red;");
 }
 
 CoinControlDialog::~CoinControlDialog()

@@ -70,10 +70,13 @@
            <widget class="QLabel" name="label_5">
             <property name="font">
              <font>
-              <pointsize>11</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
+              <pointsize>14</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Wallet</string>
@@ -124,6 +127,11 @@
           </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Balance:</string>
             </property>
@@ -133,8 +141,9 @@
            <widget class="QLabel" name="labelBalance">
             <property name="font">
              <font>
-              <weight>75</weight>
-              <bold>true</bold>
+              <pointsize>10</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="cursor">
@@ -153,6 +162,11 @@
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_6">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Stake:</string>
             </property>
@@ -162,8 +176,9 @@
            <widget class="QLabel" name="labelStake">
             <property name="font">
              <font>
-              <weight>75</weight>
-              <bold>true</bold>
+              <pointsize>10</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="cursor">
@@ -182,6 +197,11 @@
           </item>
           <item row="2" column="0">
            <widget class="QLabel" name="label_3">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Unconfirmed:</string>
             </property>
@@ -191,8 +211,9 @@
            <widget class="QLabel" name="labelUnconfirmed">
             <property name="font">
              <font>
-              <weight>75</weight>
-              <bold>true</bold>
+              <pointsize>10</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="cursor">
@@ -211,6 +232,11 @@
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="labelImmatureText">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Immature:</string>
             </property>
@@ -220,8 +246,9 @@
            <widget class="QLabel" name="labelImmature">
             <property name="font">
              <font>
-              <weight>75</weight>
-              <bold>true</bold>
+              <pointsize>10</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="toolTip">
@@ -237,6 +264,11 @@
           </item>
           <item row="4" column="0">
            <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Number of transactions:</string>
             </property>
@@ -323,7 +355,7 @@
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: white;</string>
+        <string notr="true"/>
        </property>
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
@@ -338,13 +370,16 @@
            <widget class="QLabel" name="label_4">
             <property name="font">
              <font>
-              <pointsize>9</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
+              <pointsize>12</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
+            <property name="styleSheet">
+             <string notr="true">font-weight:normal;</string>
+            </property>
             <property name="text">
-             <string>&lt;b&gt;Recent transactions&lt;/b&gt;</string>
+             <string>Recent transactions</string>
             </property>
            </widget>
           </item>
@@ -434,11 +469,6 @@
   </layout>
  </widget>
  <resources>
-  <include location="../bitcoin.qrc"/>
-  <include location="../bitcoin.qrc"/>
-  <include location="../bitcoin.qrc"/>
-  <include location="../bitcoin.qrc"/>
-  <include location="../bitcoin.qrc"/>
   <include location="../bitcoin.qrc"/>
  </resources>
  <connections/>

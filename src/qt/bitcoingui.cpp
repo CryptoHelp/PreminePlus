@@ -69,7 +69,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     rpcConsole(0)
 {
 //      setStyleSheet("font: 9pt Lucida Grande;");
-        setStyleSheet("BitcoinGUI { background: url(:/images/bg);font: 9pt Impact;color:white;}");
+        setStyleSheet("* {font-family: Impact;color:white;} BitcoinGUI { background: url(:/images/bg);}");
         qApp->setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white;padding: 6px; }");
 
 //    resize(850, 550);
@@ -236,12 +236,11 @@ void BitcoinGUI::createActions()
     unlockAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
     tabGroup->addAction(unlockAction);
 // ADDED LOCK TO MENU
-    lockAction = new QAction(QIcon(":/icons/lock_closed"), tr("&Lock Wallet"), this);
-    lockAction->setToolTip(tr("Lock Wallet"));
-    lockAction->setCheckable(true);
-    lockAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
-    tabGroup->addAction(lockAction);
-
+//    lockAction = new QAction(QIcon(":/icons/lock_closed"), tr("&Lock Wallet"), this);
+//    lockAction->setToolTip(tr("Lock Wallet"));
+//    lockAction->setCheckable(true);
+//    lockAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
+//    tabGroup->addAction(lockAction);
 
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(gotoOverviewPage()));
@@ -254,7 +253,7 @@ void BitcoinGUI::createActions()
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(gotoAddressBookPage()));
     connect(unlockAction, SIGNAL(triggered()), this, SLOT(unlockWallet()));
-    connect(lockAction, SIGNAL(triggered()), this, SLOT(lockWallet()));
+//    connect(lockAction, SIGNAL(triggered()), this, SLOT(lockWallet()));
 
     quitAction = new QAction(QIcon(":/icons/quit"), tr("E&xit"), this);
     quitAction->setToolTip(tr("Quit application"));
@@ -328,8 +327,8 @@ void BitcoinGUI::createMenuBar()
     help->addAction(aboutAction);
     help->addAction(aboutQtAction);
 
-	// QString ss("QMenuBar::item { background-color: #ceffee; color: black }"); 
-    // appMenuBar->setStyleSheet(ss);
+    //QString ss("QMenuBar::item { background-color: #ceffee; color: black }");
+    appMenuBar->setStyleSheet("QMenu {border:1px solid white;} QMenuBar::item { background-color:rgba(0,0,0,0);color:white;} QMenu::item::selected {background-color: #2a82da;} QMenuBar {background-color:rgba(0,0,0,0);} * {background-color:black;font-size:9pt;} QMenuBar::item::selected {background-color: #2a82da;}");
 }
 
 void BitcoinGUI::createToolBars()
@@ -342,13 +341,13 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(historyAction);
     toolbar->addAction(addressBookAction);
     toolbar->addAction(unlockAction);
-    toolbar->addAction(lockAction);
+//    toolbar->addAction(lockAction);
     toolbar->setMovable( false );
     toolbar->setOrientation(Qt::Vertical);
     toolbar->setAllowedAreas(Qt::LeftToolBarArea);
     toolbar->setMinimumWidth(140);
     addToolBar(Qt::LeftToolBarArea, toolbar);
-    toolbar->setStyleSheet("Qtoolbar {margin-top:20px;} QWidget {width:120px;color:white;float:left;}");
+    toolbar->setStyleSheet("Qtoolbar {margin-top:20px;} QWidget {width:120px;color:white;float:left;font:10pt Impact;font-weight:normal;}");
 
 //    QToolBar *toolbar2 = addToolBar(tr("Actions toolbar"));
 //    toolbar2->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
