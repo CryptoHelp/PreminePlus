@@ -98,7 +98,7 @@ public:
     // RAI object for unlocking wallet, returned by requestUnlock()
     class UnlockContext
     {
-    public:
+public:
         UnlockContext(WalletModel *wallet, bool valid, bool relock);
         ~UnlockContext();
 
@@ -125,7 +125,6 @@ public:
     void listLockedCoins(std::vector<COutPoint>& vOutpts);
 private:
     CWallet *wallet;
-
     // Wallet has an options model for wallet-specific options
     // (transaction fee, for example)
     OptionsModel *optionsModel;

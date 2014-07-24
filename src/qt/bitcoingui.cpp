@@ -236,11 +236,11 @@ void BitcoinGUI::createActions()
     unlockAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
     tabGroup->addAction(unlockAction);
 // ADDED LOCK TO MENU
-//    lockAction = new QAction(QIcon(":/icons/lock_closed"), tr("&Lock Wallet"), this);
-//    lockAction->setToolTip(tr("Lock Wallet"));
-//    lockAction->setCheckable(true);
-//    lockAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
-//    tabGroup->addAction(lockAction);
+    lockAction = new QAction(QIcon(":/icons/lock_closed"), tr("&Lock Wallet"), this);
+    lockAction->setToolTip(tr("Lock Wallet"));
+    lockAction->setCheckable(true);
+    lockAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
+    tabGroup->addAction(lockAction);
 
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(gotoOverviewPage()));
@@ -253,7 +253,7 @@ void BitcoinGUI::createActions()
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(gotoAddressBookPage()));
     connect(unlockAction, SIGNAL(triggered()), this, SLOT(unlockWallet()));
-//    connect(lockAction, SIGNAL(triggered()), this, SLOT(lockWallet()));
+    connect(lockAction, SIGNAL(triggered()), this, SLOT(lockWallet()));
 
     quitAction = new QAction(QIcon(":/icons/quit"), tr("E&xit"), this);
     quitAction->setToolTip(tr("Quit application"));
@@ -341,7 +341,7 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(historyAction);
     toolbar->addAction(addressBookAction);
     toolbar->addAction(unlockAction);
-//    toolbar->addAction(lockAction);
+    toolbar->addAction(lockAction);
     toolbar->setMovable( false );
     toolbar->setOrientation(Qt::Vertical);
     toolbar->setAllowedAreas(Qt::LeftToolBarArea);
@@ -828,6 +828,8 @@ void BitcoinGUI::setEncryptionStatus(int status)
         encryptWalletAction->setChecked(true);
         changePassphraseAction->setEnabled(true);
         encryptWalletAction->setEnabled(false); // TODO: decrypt currently not supported
+        unlockAction->setVisible(0);
+        lockAction->setVisible(1);
         break;
     case WalletModel::Locked:
         labelEncryptionIcon->show();
@@ -836,6 +838,8 @@ void BitcoinGUI::setEncryptionStatus(int status)
         encryptWalletAction->setChecked(true);
         changePassphraseAction->setEnabled(true);
         encryptWalletAction->setEnabled(false); // TODO: decrypt currently not supported
+        unlockAction->setVisible(1);
+        lockAction->setVisible(0);
         break;
     }
 }
@@ -882,7 +886,16 @@ void BitcoinGUI::unlockWallet()
         dlg.exec();
     }
 }
-
+void BitcoinGUI::lockWallet()
+{
+    if(!walletModel)
+        return;
+    // Lock wallet when requested by wallet model
+    if(walletModel->getEncryptionStatus() == WalletModel::Unlocked)
+    {
+        walletModel->setWalletLocked(true);
+    }
+}
 void BitcoinGUI::showNormalIfMinimized(bool fToggleHidden)
 {
     // activateWindow() (sometimes) helps with keyboard focus on Windows

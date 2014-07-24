@@ -153,28 +153,28 @@ void OverviewPage::setNumTransactions(int count)
     ui->labelNumTransactions->setText(QLocale::system().toString(count));
 }
 
-// ADDED IF WALLET LOCKED HIDE/UNHIDE LOCK BUTTONS
-void OverviewPage::unlockWallet()
-{
-    if(model->getEncryptionStatus() == WalletModel::Locked)
-    {
-        AskPassphraseDialog dlg(AskPassphraseDialog::Unlock, this);
-        dlg.setModel(model);
-        if(dlg.exec() == QDialog::Accepted)
-        {
+// ADDED: IF WALLET LOCKED HIDE/UNHIDE LOCK BUTTONS, SHOULD BE IN BITCOINGUI, MOVE) #############
+//void OverviewPage::unlockWallet()
+//{
+//   if(model->getEncryptionStatus() == WalletModel::Locked)
+//    {
+//        AskPassphraseDialog dlg(AskPassphraseDialog::Unlock, this);
+//        dlg.setModel(model);
+//        if(dlg.exec() == QDialog::Accepted)
+//        {
 //            ui->unlockWalletButton->setText(QString("Lock Wallet"));
-            unlockAction->setVisible(0);
-            lockAction->setVisible(1);
-        }
-    }
-    else
-    {
-        model->setWalletLocked(true);
-//        ui->unlockWalletButton->setText(QString("Unlock Wallet"));
-        unlockAction->setVisible(0);
-        lockAction->setVisible(1);
-    }
-}
+//              unlockAction->setVisible(0);
+//              lockAction->setVisible(1);
+//        }
+//    }
+//    else
+//    {
+//        model->setWalletLocked(true);
+//          ui->unlockWalletButton->setText(QString("Unlock Wallet"));
+//        unlockAction->setVisible(1);
+//        lockAction->setVisible(0);
+//    }
+//}
 
 void OverviewPage::setModel(WalletModel *model)
 {

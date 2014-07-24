@@ -132,6 +132,8 @@ public slots:
     */
     void askFee(qint64 nFeeRequired, bool *payFee);
     void handleURI(QString strURI);
+    /** ADDED: Allow wallet lock */
+    void lockWallet();
 
 private slots:
     /** Switch to overview (home) page */
