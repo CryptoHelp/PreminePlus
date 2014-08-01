@@ -23,6 +23,8 @@ OptionsDialog::OptionsDialog(QWidget *parent) :
     fProxyIpValid(true)
 {
     ui->setupUi(this);
+    //style tooltips
+    qApp->setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white;padding: 6px; }");
 
     /* Network elements init */
 #ifndef USE_UPNP

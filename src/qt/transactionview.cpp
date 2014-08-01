@@ -35,6 +35,8 @@ TransactionView::TransactionView(QWidget *parent) :
 {
  //added
     setStyleSheet("background: rgba(0,0,0,50);font: 9pt Impact;color:white;alternate-background-color:rgba(0,0,0,50);gridline-color:#4f4f4f;");
+    //style tooltips
+    qApp->setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white;padding: 6px; }");
 
     // Build filter row
     setContentsMargins(0,0,0,0);

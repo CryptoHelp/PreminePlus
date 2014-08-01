@@ -40,6 +40,10 @@
         <file alias="filesave">res/icons/filesave.png</file>
         <file alias="qrcode">res/icons/qrcode.png</file>
         <file alias="debugwindow">res/icons/debugwindow.png</file>
+        <file alias="social">res/icons/social.png</file>
+        <file alias="face">res/icons/face.PNG</file>
+        <file>res/icons/socialt.png</file>
+        <file alias="twitter">res/icons/TW.PNG</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="about">res/images/about.png</file>
@@ -47,8 +51,8 @@
         <file alias="backg">res/images/wallet.png</file>
         <file alias="bg">res/images/BG.png</file>
         <file alias="ccontrol">res/images/coincontrol.png</file>
-<file alias="aboutpage">res/images/aboutpage.png</file>
-<file alias="addressbook">res/images/addressbook.png</file>
+        <file alias="aboutpage">res/images/aboutpage.png</file>
+        <file alias="addressbook">res/images/addressbook.png</file>
         <file alias="changepass">res/images/changepass.png</file>
         <file alias="options">res/images/options.png</file>
     </qresource>
