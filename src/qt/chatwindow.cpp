@@ -194,10 +194,11 @@ void ChatWindow::closeEvent(QCloseEvent *event)
 		}
 	}
 }
-void ChatWindow ::setModel(ClientModel *model)
-{
-    this->model = model;
-}
+//CAUSING PROBLEMS WITH LINUX BUILDING
+//void ChatWindow ::setModel(ClientModel *model)
+//{
+ //   this->model = model;
+//}
 
 
 ChatWindow::~ChatWindow()
