@@ -2783,6 +2783,7 @@ extern map<uint256, CAlert> mapAlerts;
 extern CCriticalSection cs_mapAlerts;
 
 static string strMintMessage = "Info: Minting suspended due to locked wallet.";
+static string strMintingMessage = "Info: Currently minting one or more stake amounts.";
 static string strMintWarning;
 
 string GetWarnings(string strFor)
@@ -4343,6 +4344,13 @@ void BitcoinMiner(CWallet *pwallet, bool fProofOfStake)
         while (pwallet->IsLocked())
         {
             strMintWarning = strMintMessage;
+            Sleep(1000);
+        }
+
+//ADDED MINTING MESSAGE
+        while (pwallet->IsCrypted())
+        {
+            strMintWarning = strMintingMessage;
             Sleep(1000);
         }
         strMintWarning = "";
