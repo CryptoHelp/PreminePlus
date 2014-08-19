@@ -4341,19 +4341,17 @@ void BitcoinMiner(CWallet *pwallet, bool fProofOfStake)
                 return;
         }
 
-        while (pwallet->IsLocked())
+        if (pwallet->IsLocked())
         {
             strMintWarning = strMintMessage;
             Sleep(1000);
         }
-
 //ADDED MINTING MESSAGE
-        while (pwallet->IsCrypted())
+        if (pwallet->IsCrypted())
         {
             strMintWarning = strMintingMessage;
             Sleep(1000);
         }
-        strMintWarning = "";
 
         //
         // Create new block
