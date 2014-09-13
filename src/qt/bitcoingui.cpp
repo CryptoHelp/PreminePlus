@@ -26,6 +26,7 @@
 #include "notificator.h"
 #include "guiutil.h"
 #include "rpcconsole.h"
+#include "blockbrowser.h"
 
 
 #ifdef Q_OS_MAC
@@ -117,6 +118,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
 
     chatWindow = new ChatWindow(this);
 
+    blockBrowser = new BlockBrowser(this);
     signVerifyMessageDialog = new SignVerifyMessageDialog(this);
 
     centralWidget = new QStackedWidget(this);
@@ -126,6 +128,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     centralWidget->addWidget(receiveCoinsPage);
     centralWidget->addWidget(sendCoinsPage);
     centralWidget->addWidget(chatWindow);
+    centralWidget->addWidget(blockBrowser);
     setCentralWidget(centralWidget);
 
     // Create status bar
@@ -251,6 +254,12 @@ void BitcoinGUI::createActions()
     chatAction->setToolTip(tr("View chat"));
     chatAction->setCheckable(true);
     tabGroup->addAction(chatAction);
+// ADDED BLOCK EXPLORER TO MENU
+    blockAction = new QAction(QIcon(":/icons/block"), tr("&Block Explorer"), this);
+    blockAction->setToolTip(tr("Explore the BlockChain"));
+    blockAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_8));
+    blockAction->setCheckable(true);
+    tabGroup->addAction(blockAction);
 
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(overviewAction, SIGNAL(triggered()), this, SLOT(gotoOverviewPage()));
@@ -265,6 +274,7 @@ void BitcoinGUI::createActions()
     connect(unlockAction, SIGNAL(triggered()), this, SLOT(unlockWallet()));
     connect(lockAction, SIGNAL(triggered()), this, SLOT(lockWallet()));
     connect(chatAction, SIGNAL(triggered()), this, SLOT(gotoChatPage()));
+    connect(blockAction, SIGNAL(triggered()), this, SLOT(gotoBlockBrowser()));
 
     quitAction = new QAction(QIcon(":/icons/quit"), tr("E&xit"), this);
     quitAction->setToolTip(tr("Quit application"));
@@ -354,6 +364,7 @@ void BitcoinGUI::createToolBars()
     toolbar->addAction(unlockAction);
     toolbar->addAction(lockAction);
     toolbar->addAction(chatAction);
+    toolbar->addAction(blockAction);
     toolbar->setMovable( false );
     toolbar->setOrientation(Qt::Vertical);
     toolbar->setAllowedAreas(Qt::LeftToolBarArea);
@@ -425,6 +436,7 @@ void BitcoinGUI::setWalletModel(WalletModel *walletModel)
         signVerifyMessageDialog->setModel(walletModel);
 
         chatWindow->setModel(clientModel);
+        blockBrowser->setModel(clientModel);
 
         setEncryptionStatus(walletModel->getEncryptionStatus());
         connect(walletModel, SIGNAL(encryptionStatusChanged(int)), this, SLOT(setEncryptionStatus(int)));
@@ -787,6 +799,19 @@ void BitcoinGUI::gotoChatPage()
     exportAction->setEnabled(false);
     disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 
+}
+void BitcoinGUI::gotoBlockBrowser()
+{
+    blockAction->setChecked(true);
+    centralWidget->setCurrentWidget(blockBrowser);
+//    actionConvertIcon->setEnabled(true);
+//    actionConvertIcon->setVisible(true);
+//    disconnect(actionConvertIcon, SIGNAL(triggered()), 0, 0);
+//    connect(actionConvertIcon, SIGNAL(triggered()), this, SLOT(sConvert()));
+//    exportAction->setVisible(false);
+
+    exportAction->setEnabled(false);
+    disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
 void BitcoinGUI::gotoVerifyMessageTab(QString addr)

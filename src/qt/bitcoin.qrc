@@ -44,6 +44,7 @@
         <file alias="face">res/icons/face.PNG</file>
         <file>res/icons/socialt.png</file>
         <file alias="twitter">res/icons/TW.PNG</file>
+        <file alias="block">res/icons/block.png</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="about">res/images/about.png</file>
