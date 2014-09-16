@@ -134,12 +134,14 @@ void ChatWindow::sendCommande()
 void ChatWindow::tabJoined()
 {
 	joining=true;
+    currentTab()->updateUsersList(ui->tab->tabText( 0 ));
+    //currentTab()->userList->update();
+
 }
 void ChatWindow::tabJoining()
 {
     joining=false;
 }
-
 void ChatWindow::connecte()
 {
 

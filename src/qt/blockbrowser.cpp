@@ -328,7 +328,7 @@ BlockBrowser::BlockBrowser(QWidget *parent) :
 
     setFixedSize(400, 420);
         
-    connect(ui->blockButton, SIGNAL(pressed()), this, SLOT(blockClicked()));
+    //connect(ui->blockButton, SIGNAL(pressed()), this, SLOT(blockClicked()));
     connect(ui->txButton, SIGNAL(pressed()), this, SLOT(txClicked()));
 }
 
@@ -336,47 +336,47 @@ void BlockBrowser::updateExplorer(bool block)
 {    
     if(block)
     {
-        ui->heightLabel->show();
-        ui->heightLabel_2->show();
-        ui->hashLabel->show();
-        ui->hashBox->show();
-        ui->merkleLabel->show();
-        ui->merkleBox->show();
-        ui->nonceLabel->show();
-        ui->nonceBox->show();
-        ui->bitsLabel->show();
-        ui->bitsBox->show();
-        ui->timeLabel->show();
-        ui->timeBox->show();
-        int height = ui->heightBox->value();
-        if (height > pindexBest->nHeight)
-        {
-            ui->heightBox->setValue(pindexBest->nHeight);
-            height = pindexBest->nHeight;
-        }
-        int Pawrate = getBlockHashrate(height);
-        double Pawrate2 = 0.000;
-        Pawrate2 = ((double)Pawrate / 1000000);
-        std::string hash = getBlockHash(height);
-        std::string merkle = getBlockMerkle(height);
-        int nBits = getBlocknBits(height);
-        int nNonce = getBlockNonce(height);
-        int atime = getBlockTime(height);
-        double hardness = getBlockHardness(height);
-        QString QHeight = QString::number(height);
-        QString QHash = QString::fromUtf8(hash.c_str());
-        QString QMerkle = QString::fromUtf8(merkle.c_str());
-        QString QBits = QString::number(nBits);
-        QString QNonce = QString::number(nNonce);
-        QString QTime = QString::number(atime);
-        QString QHardness = QString::number(hardness, 'f', 6);
-        QString QPawrate = QString::number(Pawrate2, 'f', 3);
-        ui->heightLabel->setText(QHeight);
-        ui->hashBox->setText(QHash);
-        ui->merkleBox->setText(QMerkle);
-        ui->bitsBox->setText(QBits);
-        ui->nonceBox->setText(QNonce);
-        ui->timeBox->setText(QTime);     
+        //ui->heightLabel->show();
+        //ui->heightLabel_2->show();
+        //ui->hashLabel->show();
+        //ui->hashBox->show();
+        //ui->merkleLabel->show();
+        //ui->merkleBox->show();
+        //ui->nonceLabel->show();
+        //ui->nonceBox->show();
+        //ui->bitsLabel->show();
+        //ui->bitsBox->show();
+        //ui->timeLabel->show();
+        //ui->timeBox->show();
+        //int height = ui->heightBox->value();
+        //if (height > pindexBest->nHeight)
+        //{
+        //    ui->heightBox->setValue(pindexBest->nHeight);
+        //    height = pindexBest->nHeight;
+        //}
+        //int Pawrate = getBlockHashrate(height);
+        //double Pawrate2 = 0.000;
+        //Pawrate2 = ((double)Pawrate / 1000000);
+        //std::string hash = getBlockHash(height);
+        //std::string merkle = getBlockMerkle(height);
+        //int nBits = getBlocknBits(height);
+        //int nNonce = getBlockNonce(height);
+        //int atime = getBlockTime(height);
+        //double hardness = getBlockHardness(height);
+        //QString QHeight = QString::number(height);
+        //QString QHash = QString::fromUtf8(hash.c_str());
+        //QString QMerkle = QString::fromUtf8(merkle.c_str());
+        //QString QBits = QString::number(nBits);
+        //QString QNonce = QString::number(nNonce);
+        //QString QTime = QString::number(atime);
+        //QString QHardness = QString::number(hardness, 'f', 6);
+        //QString QPawrate = QString::number(Pawrate2, 'f', 3);
+        //ui->heightLabel->setText(QHeight);
+        //ui->hashBox->setText(QHash);
+        //ui->merkleBox->setText(QMerkle);
+        //ui->bitsBox->setText(QBits);
+        //ui->nonceBox->setText(QNonce);
+        //ui->timeBox->setText(QTime);
 
     }
     
